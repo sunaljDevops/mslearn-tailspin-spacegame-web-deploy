@@ -96,11 +96,11 @@ stages:
                 package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
 
   - stage: 'Test'
-      displayName: 'Deploy to the test environment'
-      dependsOn: dev
+    displayName: 'Deploy to the test environment'
+    dependsOn: Dev
       #condition: eq(variables['Build.Reason'],'Schedule')
-      jobs:
-      - deployment: Deploy
+    jobs:
+    - deployment: Deploy
         pool:
           vmImage: 'ubuntu-16.04'
         environment: test
