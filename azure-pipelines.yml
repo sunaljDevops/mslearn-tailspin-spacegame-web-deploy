@@ -103,7 +103,7 @@ stages:
     - deployment: Deploy
       pool:
         vmImage: 'ubuntu-16.04'
-       environment: test
+      environment: test
       variables:
       - group: Release
         strategy:
